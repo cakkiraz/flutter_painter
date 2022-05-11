@@ -26,10 +26,7 @@ class TextDrawable extends ObjectDrawable {
     required Offset position,
     double rotation = 0,
     double scale = 1,
-    this.style = const TextStyle(
-      fontSize: 14,
-      color: Colors.black,
-    ),
+    this.style ,
     this.direction = TextDirection.ltr,
     bool locked = false,
     bool hidden = false,
