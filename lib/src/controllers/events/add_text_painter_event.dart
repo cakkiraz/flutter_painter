@@ -5,5 +5,5 @@ import 'package:flutter/material.dart';
 class AddTextPainterEvent extends PainterEvent {
   final TextStyle? textStyle;
   /// Creates an [AddTextPainterEvent].
-  const AddTextPainterEvent({this.textStyle});
+  AddTextPainterEvent({this.textStyle});
 }
