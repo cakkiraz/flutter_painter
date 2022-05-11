@@ -75,7 +75,7 @@ class _TextWidgetState extends State<_TextWidget> {
   }
 
   /// Creates a new [TextDrawable], adds it to the controller and opens the editing widget.
-  void createDrawable() {
+  void createDrawable({TextStyle? textStyle}) {
     if (selectedDrawable != null) return;
 
     // Calculate the center of the painter
@@ -94,7 +94,7 @@ class _TextWidgetState extends State<_TextWidget> {
     final drawable = TextDrawable(
       text: '',
       position: center,
-      style: settings.textStyle,
+      style: textStyle!=null ?textStyle:settings.textStyle,
       hidden: true,
     );
     PainterController.of(context).addDrawables([drawable]);
