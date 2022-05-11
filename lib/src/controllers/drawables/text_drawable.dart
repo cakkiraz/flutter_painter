@@ -93,6 +93,53 @@ class TextDrawable extends ObjectDrawable {
     textPainter.layout(minWidth: minWidth, maxWidth: maxWidth * scale);
     return textPainter.size;
   }
+  
+  Map<String, dynamic>? toJson() {
+    return {
+      "text": text,
+      "position": {
+        "dx": position.dx,
+        "dy": position.dy,
+      },
+      "rotation": rotationAngle,
+      "scale": scale,
+      "hidden": hidden,
+      "locked": locked,
+      "direction": direction == TextDirection.rtl ? "rtl" : "ltr",
+      "style": {
+        // "backgroundColor": style.backgroundColor,
+        "fontFamily": style.fontFamily,
+        "fontSize": style.fontSize,
+        "wordSpacing": style.wordSpacing,
+        "decorationThickness": style.decorationThickness,
+        "height": style.height,
+      },
+    };
+  }
+
+  static TextDrawable? fromJson(Map<String, dynamic> json) {
+    return TextDrawable(
+        text: json["text"],
+        position: Offset(
+          json["position"]['dx'],
+          json["position"]['dy'],
+        )).copyWith(
+      scale: json["scale"],
+      direction:
+          json["direction"] == "rtl" ? TextDirection.rtl : TextDirection.ltr,
+      locked: json["locked"],
+      hidden: json["hidden"],
+      style: TextStyle(
+        // backgroundColor: json["style"]["backgroundColor"],
+        fontFamily: json["style"]["fontFamily"],
+        fontSize: json["style"]["fontSize"],
+        wordSpacing: json["style"]["wordSpacing"],
+        decorationThickness: json["style"]["decorationThickness"],
+        height: json["style"]["height"],
+      ),
+      rotation: json["rotation"],
+    );
+  }
 
   /// Compares two [TextDrawable]s for equality.
   // @override
