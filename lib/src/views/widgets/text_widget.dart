@@ -33,7 +33,7 @@ class _TextWidgetState extends State<_TextWidget> {
       controllerEventSubscription =
           PainterController.of(context).events.listen((event) {
         // When an [AddTextPainterEvent] event is received, create a new text drawable
-        if (event is AddTextPainterEvent) createDrawable();
+        if (event is AddTextPainterEvent) createDrawable(textStyle:event.textStyle);
       });
     });
   }
