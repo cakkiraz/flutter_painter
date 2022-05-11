@@ -268,8 +268,8 @@ class PainterController extends ValueNotifier<PainterControllerValue> {
   }
 
   /// Dispatches a [AddTextPainterEvent] on `events` stream.
-  void addText() {
-    _eventsSteamController.add(const AddTextPainterEvent());
+  void addText({TextStyle? textStyle}) {
+    _eventsSteamController.add(const AddTextPainterEvent(textStyle:textStyle));
   }
 
   /// Adds an [ImageDrawable] to the center of the painter.
