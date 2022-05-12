@@ -398,7 +398,7 @@ class PainterControllerValue {
   /// Getter for the current drawables.
   ///
   /// The returned list is unmodifiable.
-  List<Drawable> get drawables => List.unmodifiable(_drawables);
+  List<Drawable> get drawables => _drawables;
 
   /// Creates a copy of this value but with the given fields replaced with the new values.
   PainterControllerValue copyWith({
