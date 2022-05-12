@@ -259,7 +259,7 @@ class EditTextWidgetState extends State<EditTextWidget>
               maxLines: 10,
               controller: textEditingController,
               focusNode: textFieldNode,
-              style: settings.textStyle,
+              style: widget.drawable.style,
               textAlign: TextAlign.center,
               textAlignVertical: TextAlignVertical.center,
               onEditingComplete: onEditingComplete,
@@ -310,7 +310,7 @@ class EditTextWidgetState extends State<EditTextWidget>
     } else {
       final drawable = widget.drawable.copyWith(
         text: textEditingController.text.trim(),
-        style: settings.textStyle,
+        style: widget.drawable.style,
         hidden: false,
       );
       updateDrawable(widget.drawable, drawable);
