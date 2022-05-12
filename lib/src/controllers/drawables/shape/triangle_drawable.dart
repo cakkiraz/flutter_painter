@@ -67,7 +67,7 @@ class TriangleDrawable extends Sized2DDrawable implements ShapeDrawable {
     Paint? paint,
     bool? locked,
   }) {
-    return OvalDrawable(
+    return TriangleDrawable(
       hidden: hidden ?? this.hidden,
       assists: assists ?? this.assists,
       position: position ?? this.position,
