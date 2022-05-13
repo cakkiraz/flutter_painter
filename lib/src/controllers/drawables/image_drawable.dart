@@ -102,7 +102,7 @@ class ImageDrawable extends ObjectDrawable {
         Rect.fromPoints(Offset.zero,
             Offset(image.width.toDouble(), image.height.toDouble())),
         Rect.fromPoints(position - scaledSize / 2, position + scaledSize / 2),
-        Paint().copyWith(color: Color.fromRGBO(0, 0, 0, opacity));
+        Paint().copyWith(color: Color.fromRGBO(0, 0, 0, opacity)));
 
   }
 
