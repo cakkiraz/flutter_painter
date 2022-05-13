@@ -17,6 +17,7 @@ class ImageDrawable extends ObjectDrawable {
     required Offset position,
     double rotationAngle = 0,
     double scale = 1,
+    double opacity = 1,
     Set<ObjectDrawableAssist> assists = const <ObjectDrawableAssist>{},
     Map<ObjectDrawableAssist, Paint> assistPaints =
         const <ObjectDrawableAssist, Paint>{},
@@ -28,6 +29,7 @@ class ImageDrawable extends ObjectDrawable {
             position: position,
             rotationAngle: rotationAngle,
             scale: scale,
+            opacity: opacity,
             assists: assists,
             assistPaints: assistPaints,
             hidden: hidden,
@@ -68,6 +70,7 @@ class ImageDrawable extends ObjectDrawable {
       Offset? position,
       double? rotation,
       double? scale,
+      double? opacity,
       Image? image,
       bool? flipped,
       bool? locked}) {
@@ -77,6 +80,7 @@ class ImageDrawable extends ObjectDrawable {
       position: position ?? this.position,
       rotationAngle: rotation ?? rotationAngle,
       scale: scale ?? this.scale,
+      opacity: opacity ?? this.opacity,
       image: image ?? this.image,
       flipped: flipped ?? this.flipped,
       locked: locked ?? this.locked,
@@ -98,7 +102,8 @@ class ImageDrawable extends ObjectDrawable {
         Rect.fromPoints(Offset.zero,
             Offset(image.width.toDouble(), image.height.toDouble())),
         Rect.fromPoints(position - scaledSize / 2, position + scaledSize / 2),
-        Paint());
+        Paint().copyWith(color: Color.fromRGBO(0, 0, 0, opacity));
+
   }
 
   /// Calculates the size of the rendered object.
