@@ -95,6 +95,8 @@ class ImageDrawable extends ObjectDrawable {
     final position = this.position.scale(flipped ? -1 : 1, 1);
 
     if (flipped) canvas.scale(-1, 1);
+    final _paint = Paint();
+    _paint.color = Color.fromRGBO(0, 0, 0, opacity);
 
     // Draw the image onto the canvas.
     canvas.drawImageRect(
@@ -102,7 +104,7 @@ class ImageDrawable extends ObjectDrawable {
         Rect.fromPoints(Offset.zero,
             Offset(image.width.toDouble(), image.height.toDouble())),
         Rect.fromPoints(position - scaledSize / 2, position + scaledSize / 2),
-        Paint().copyWith(color: Color.fromRGBO(0, 0, 0, opacity)));
+        _paint);
 
   }
 
