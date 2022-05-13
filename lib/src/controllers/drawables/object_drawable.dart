@@ -30,6 +30,9 @@ abstract class ObjectDrawable extends Drawable {
 
   /// The scale of the object to be painted.
   final double scale;
+  
+  /// The opacity of the object to be painted.
+  final double opacity;
 
   /// The rotation of the object to be painted in radians.
   ///
@@ -58,6 +61,7 @@ abstract class ObjectDrawable extends Drawable {
     required this.position,
     this.rotationAngle = 0,
     double scale = 1,
+    double opacity = 1,
     this.assists = const <ObjectDrawableAssist>{},
     this.assistPaints = const <ObjectDrawableAssist, Paint>{},
     this.locked = false,
