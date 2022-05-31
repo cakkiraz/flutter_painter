@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/rendering.dart';
+import 'package:crop_your_image/crop_your_image.dart';
 
 import 'object_drawable.dart';
 
@@ -116,6 +117,7 @@ class ImageDrawable extends ObjectDrawable {
       image.height * scale,
     );
   }
+  
 
   /// Compares two [ImageDrawable]s for equality.
   // @override
