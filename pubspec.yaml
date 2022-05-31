@@ -20,5 +20,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   mocktail: ^0.3.0-dev.1
+  crop_your_image: ^0.7.2
 
 flutter:
